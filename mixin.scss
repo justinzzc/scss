@@ -1,0 +1,73 @@
+@mixin ml($left: 10px) {
+  margin-left: $left;
+}
+
+@mixin size($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin transition($transition...) {
+  transition: $transition;
+  -moz-transition: $transition; /* Firefox 4 */
+  -webkit-transition: $transition; /* Safari 和 Chrome */
+  -o-transition: $transition; /* Opera */
+}
+
+@mixin linear-gradient($gradient...) {
+  background: linear-gradient($gradient);
+  background: -moz-linear-gradient($gradient); /* Firefox 4 */
+  background: -webkit-linear-gradient($gradient); /* Safari 和 Chrome */
+  background: -o-linear-gradient($gradient); /* Opera */
+}
+
+@mixin gradient($gradient...) {
+  background: gradient($gradient);
+  background: -webkit-gradient($gradient); /* Safari 和 Chrome */
+}
+
+@mixin box-shadow($top, $left, $blur, $color, $inset: "") {
+
+  box-shadow: $top $left $blur $color #{$inset};
+  -webkit-box-shadow: $top $left $blur $color #{$inset};
+  -moz-box-shadow: $top $left $blur $color #{$inset};
+  -o-box-shadow: $top $left $blur $color #{$inset};
+}
+
+@mixin text-shadow($top, $left, $blur, $color, $inset: "") {
+
+  text-shadow: $top $left $blur $color #{$inset};
+  -webkit-text-shadow: $top $left $blur $color #{$inset};
+  -moz-text-shadow: $top $left $blur $color #{$inset};
+  -o-text-shadow: $top $left $blur $color #{$inset};
+}
+
+@mixin animation($animation...) {
+  animation: $animation;
+  -webkit-animation: $animation;
+}
+
+@mixin transform($transform...) {
+  transform: $transform;
+  -ms-transform: $transform; /* IE 9 */
+  -moz-transform: $transform; /* Firefox */
+  -webkit-transform: $transform; /* Safari 和 Chrome */
+  -o-transform: $transform; /* Opera */
+
+}
+
+@mixin keyframes($frameName) {
+  @keyframes #{$frameName}{
+    @content;
+  }
+
+  @-moz-keyframes #{$frameName}{
+    @content;
+  }
+  @-webkit-keyframes #{$frameName}{
+    @content;
+  }
+  @-o-keyframes #{$frameName}{
+    @content;
+  }
+}
